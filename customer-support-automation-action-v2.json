@@ -1,0 +1,4054 @@
+{
+  "name": "Customer Support Automation-action",
+  "type": "action",
+  "counts": {
+    "actions": 8,
+    "intents": 5,
+    "entities": 10,
+    "data_types": 0,
+    "collections": 0,
+    "global_variables": 3
+  },
+  "status": "Available",
+  "language": "en",
+  "skill_id": "d4982d42-f410-4f2e-ad3a-e88a35cd5f53",
+  "workspace": {
+    "actions": [
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_302",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Hello there! Here are some Training and resources to help you protect yourself from cybercrime and fraud."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                },
+                {
+                  "options": [
+                    {
+                      "label": "Cyber Security Awareness VIDEOS ",
+                      "value": {
+                        "input": {
+                          "text": "Cyber Security Awareness VIDEOS "
+                        }
+                      }
+                    },
+                    {
+                      "label": "Cyber Security Resources BOOKS",
+                      "value": {
+                        "input": {
+                          "text": "Cyber Security Resources BOOKS"
+                        }
+                      }
+                    },
+                    {
+                      "label": "TRAINING RESOURCES",
+                      "value": {
+                        "input": {
+                          "text": "TRAINING RESOURCES"
+                        }
+                      }
+                    },
+                    {
+                      "label": "NEWS Channels for Cyber Crimes",
+                      "value": {
+                        "input": {
+                          "text": "NEWS Channels for Cyber Crimes"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "context": {
+              "variables": []
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I didn't catch that. Select a valid option:"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "entity_48920",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_302",
+            "next_step": "step_808"
+          },
+          {
+            "step": "step_808",
+            "output": {
+              "generic": [
+                {
+                  "title": "",
+                  "source": "https://youtu.be/39kPfBmekZ0?si=3vmET7WBFMa_eKYC",
+                  "alt_text": "",
+                  "description": "",
+                  "response_type": "video",
+                  "channel_options": {
+                    "chat": {
+                      "dimensions": {
+                        "base_height": 180
+                      }
+                    }
+                  }
+                },
+                {
+                  "title": "",
+                  "source": "https://youtu.be/qZE45J-MIUg?si=djv_SB8AxAeom65I",
+                  "alt_text": "",
+                  "description": "",
+                  "response_type": "video",
+                  "channel_options": {
+                    "chat": {
+                      "dimensions": {
+                        "base_height": 180
+                      }
+                    }
+                  }
+                },
+                {
+                  "title": "",
+                  "source": "https://youtu.be/8LcSrRJjF8o?si=4tJGfbMyBUAGjUPy",
+                  "alt_text": "",
+                  "description": "",
+                  "response_type": "video",
+                  "channel_options": {
+                    "chat": {
+                      "dimensions": {
+                        "base_height": 180
+                      }
+                    }
+                  }
+                },
+                {
+                  "title": "",
+                  "source": "https://youtu.be/rXf58AUgKGM?si=9clCm6Eo1FaeO5Ke",
+                  "alt_text": "",
+                  "description": "",
+                  "response_type": "video",
+                  "channel_options": {
+                    "chat": {
+                      "dimensions": {
+                        "base_height": 180
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "replay",
+              "clear": [
+                {
+                  "variable": "step_302"
+                }
+              ]
+            },
+            "variable": "step_808",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_302"
+                },
+                {
+                  "value": "Cyber Security Awareness VIDEOS ",
+                  "from_entity": "entity_48920"
+                }
+              ]
+            },
+            "next_step": "step_967"
+          },
+          {
+            "step": "step_967",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "[A Handbook For Students on Cyber Safety in (Hindi).](https://www.cybercrime.gov.in/UploadMedia/CyberSafetyHindi.pdf)\n\n[A Handbook For Students on Cyber Safety in (English).](https://www.cybercrime.gov.in/UploadMedia/CyberSafetyEng.pdf)\n\n[Handbook for Tackling Cyber Crimes.](https://www.cybercrime.gov.in/UploadMedia/TSWSW-HandbookforTacklingCyberCrimes.pdf)"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "replay",
+              "clear": [
+                {
+                  "variable": "step_302"
+                }
+              ]
+            },
+            "variable": "step_967",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_302"
+                },
+                {
+                  "value": "Cyber Security Resources BOOKS",
+                  "from_entity": "entity_48920"
+                }
+              ]
+            },
+            "next_step": "step_984"
+          },
+          {
+            "step": "step_984",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "[cytrain.ncrb.gov.in (NCRP Portal)](https://cytrain.ncrb.gov.in/)\n\n[isea.gov.in (Information Security Education & Awareness portal)](https://isea.gov.in/)[igotkarmayogi.gov.in (Mission Karmayogi portal)](https://igotkarmayogi.gov.in/)"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "[nielitcyberforensics.in](http://nielitcyberforensics.in/)"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "[Chief Information Security Officer (CISO)’s Training Program On Cyber Security ( May 8-12, 2023)](https://www.cybercrime.gov.in/UploadMedia/BRIEF%20OF%20CISO%20TRAINING.pdf)"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "replay",
+              "clear": [
+                {
+                  "variable": "step_302"
+                }
+              ]
+            },
+            "variable": "step_984",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_302"
+                },
+                {
+                  "value": "TRAINING RESOURCES",
+                  "from_entity": "entity_48920"
+                }
+              ]
+            },
+            "next_step": "step_255"
+          },
+          {
+            "step": "step_255",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "The Hacker News\n\nReddit\n\nNDTV News\n\nThe Times Of India"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "replay",
+              "clear": [
+                {
+                  "variable": "step_302"
+                }
+              ]
+            },
+            "variable": "step_255",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_302"
+                },
+                {
+                  "value": "NEWS Channels for Cyber Crimes",
+                  "from_entity": "entity_48920"
+                }
+              ]
+            }
+          }
+        ],
+        "title": "Learn about online safety",
+        "action": "action_20153",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_20153_intent_12084"
+        },
+        "variables": [
+          {
+            "title": "The Hacker News Reddit NDTV News The Times Of India",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_255",
+            "data_type": "any"
+          },
+          {
+            "title": "Hello there! Here are some Training and resources to help you pr",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_302",
+            "data_type": "any"
+          },
+          {
+            "title": "",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_808",
+            "data_type": "any"
+          },
+          {
+            "title": "[A Handbook For Students on Cyber Safety in (Hindi).](https://ww",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_967",
+            "data_type": "any"
+          },
+          {
+            "title": "[cytrain.ncrb.gov.in (NCRP Portal)](https://cytrain.ncrb.gov.in/",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_984",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_31085",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_520",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Welcome to the **National Cyber Crime Reporting Portal!**"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_520",
+            "next_step": "step_887"
+          },
+          {
+            "step": "step_887",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Hi, I'm Nira, the GuardianBot. I'm here to guide you through filing your complaint without any mistakes."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_887",
+            "next_step": "step_442"
+          },
+          {
+            "step": "step_442",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Chosse the following optons:-"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                },
+                {
+                  "options": [
+                    {
+                      "label": "Steps for fill the online complaint or report",
+                      "value": {
+                        "input": {
+                          "text": "Steps for fill the online complaint or report"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Video for fill the online complaint or report",
+                      "value": {
+                        "input": {
+                          "text": "Video for fill the online complaint or report"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Documents Reqirements",
+                      "value": {
+                        "input": {
+                          "text": "Documents Reqirements"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I didn't catch that. Select a valid option:"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "entity_25934",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_442",
+            "next_step": "step_977"
+          },
+          {
+            "step": "step_977",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Here, we provide a step-by-step guide on how to report cybercrime online in India through the National Cyber Crime Reporting Portal. The portal aims to facilitate victims and complainants in submitting cybercrime complaints online, focusing particularly on crimes against women and children."
+                          },
+                          {
+                            "scalar": " The video guides viewers through the process of reporting a cybercrime incident on the portal and underscores the importance of taking action against such offenses.\n\n<br />\n\n\n\n**Key Points:**\n\n<br />\n\n\n\n**About the National Cyber Crime Reporting Portal:**\n\n\n  -"
+                          },
+                          {
+                            "scalar": " The National Cyber Crime Reporting Portal is an initiative of the Government of India designed to enable victims and complainants to report cybercrime complaints online.\n  - The portal addresses complaints related to cybercrimes, with a specific emphasis on crimes against women and children.\n\n<br />\n\n\n\n**How to Report Cybercrime Online:**\n\n\n  - To report a cybercrime,"
+                          },
+                          {
+                            "scalar": " visit the portal at cybercrime.gov.in.\n  - Select the option to report a cybercrime incident on the website.\n  - Provide details about the incident, including the type of crime, date, time, and any supporting evidence.\n  - Submit the complaint online after completing the necessary information.\n\n<br />\n\n\n\n**Importance of Reporting Cybercrime:**\n\n\n  -"
+                          },
+                          {
+                            "scalar": " Reporting cybercrime is crucial for enabling authorities to investigate and take necessary actions against such incidents.\n  - It helps raise awareness and prevents future occurrences.\n  - Citizens are encouraged to remain vigilant and report any encountered cybercrime for the safety of the community."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "replay",
+              "clear": [
+                {
+                  "variable": "step_442"
+                }
+              ]
+            },
+            "variable": "step_977",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_442"
+                },
+                {
+                  "value": "Steps for fill the online complaint or report",
+                  "from_entity": "entity_25934"
+                }
+              ]
+            },
+            "next_step": "step_819"
+          },
+          {
+            "step": "step_819",
+            "output": {
+              "generic": [
+                {
+                  "title": "",
+                  "source": "https://youtu.be/QZA92NIPttE?si=r7ca-WV5ClTACLj5",
+                  "alt_text": "",
+                  "description": "",
+                  "response_type": "video",
+                  "channel_options": {
+                    "chat": {
+                      "dimensions": {
+                        "base_height": 180
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "replay",
+              "clear": [
+                {
+                  "variable": "step_442"
+                }
+              ]
+            },
+            "variable": "step_819",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_442"
+                },
+                {
+                  "value": "Video for fill the online complaint or report",
+                  "from_entity": "entity_25934"
+                }
+              ]
+            },
+            "next_step": "step_688"
+          },
+          {
+            "step": "step_688",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Please keep this information ready before filing your complaint:\n\n**Mandatory Information**\n\n\n  1. Incident Date and Time.\n  2. Incident details (minimum 200 characters) without any special characters (#$@^*`’’~|!).\n  3. Soft copy of any national Id ( Voter Id, Driving license, Passport, PAN Card, Aadhar Card) of complainant in .jpeg, .jpg, .png format (file size should not more than 5 MB).\n**4."
+                          },
+                          {
+                            "scalar": " In case of financial fraud, please keep following information ready:**\ni) Name of the Bank/ Wallet/Merchant\nii) 12-digit Transaction id/UTR No.\niii) Date of transaction\niv) Fraud amount\n  4. Soft copy of all the relevant evidences related to the cyber crime (not more than 10 MB each)\n\n**Optional/Desirable Information:**\n\n\n  1."
+                          },
+                          {
+                            "scalar": " Suspected website URLs/ Social Media handles (wherever applicable)\n  2. Suspect Details (if available)\ni) Mobile No\nii) Email id\niii) Bank Account No\niv) Address\nv) Soft copy of photograph of suspect in .jpeg, .jpg, .png format (not more than 5 MB)\nvi) Any other document through which suspect can be identified."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "replay",
+              "clear": [
+                {
+                  "variable": "step_442"
+                }
+              ]
+            },
+            "variable": "step_688",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_442"
+                },
+                {
+                  "value": "Documents Reqirements",
+                  "from_entity": "entity_25934"
+                }
+              ]
+            }
+          }
+        ],
+        "title": "Need assistance",
+        "action": "action_9989",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_9989_intent_5390"
+        },
+        "variables": [
+          {
+            "title": "Chosse the following optons:-",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_442",
+            "data_type": "any"
+          },
+          {
+            "title": "Welcome to the **National Cyber Crime Reporting Portal!**",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_520",
+            "data_type": "any"
+          },
+          {
+            "title": "Please keep this information ready before filing your complaint:",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_688",
+            "data_type": "any"
+          },
+          {
+            "title": "",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_819",
+            "data_type": "any"
+          },
+          {
+            "title": "Hi, I'm Nira, the GuardianBot. I'm here to guide you through fil",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_887",
+            "data_type": "any"
+          },
+          {
+            "title": "Here, we provide a step-by-step guide on how to report cybercrim",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_977",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "fallback",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "digression_failure",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "Sorry I couldn't confirm if you wanted to return to previous topic, let me connect to an agent."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Let's send you to an available agent."
+                },
+                "agent_unavailable": {
+                  "message": "There are no agents available at this time. When one becomes available, we'll connect you."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "digression_failure",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Failed to confirm topic return"
+                }
+              ]
+            },
+            "next_step": "step_001"
+          },
+          {
+            "step": "step_001",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "I'm afraid I don't understand. I can connect you to an agent."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Let's send you to an available agent."
+                },
+                "agent_unavailable": {
+                  "message": "There are no agents available at this time. When one becomes available, we'll connect you."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "step_001",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Step validation failed"
+                }
+              ]
+            },
+            "next_step": "step_002"
+          },
+          {
+            "step": "step_002",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "Sorry I couldn't assist you. I will connect you to an agent right away."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Let's send you to an available agent."
+                },
+                "agent_unavailable": {
+                  "message": "There are no agents available at this time. When one becomes available, we'll connect you."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "step_002",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Agent requested"
+                }
+              ]
+            },
+            "next_step": "step_003"
+          },
+          {
+            "step": "step_003",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "I am afraid I do not understand what you are asking, let me connect you to an agent."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Let's send you to an available agent."
+                },
+                "agent_unavailable": {
+                  "message": "There are no agents available at this time. When one becomes available, we'll connect you."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "step_003",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "No action matches"
+                }
+              ]
+            },
+            "next_step": "step_004"
+          },
+          {
+            "step": "step_004",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "It seems this conversation would be best managed by a human agent. Let me connect you to one of our agents."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Let's send you to an available agent."
+                },
+                "agent_unavailable": {
+                  "message": "There are no agents available at this time. When one becomes available, we'll connect you."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "step_004",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Danger word detected"
+                }
+              ]
+            },
+            "next_step": "step_005"
+          },
+          {
+            "step": "step_005",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "It seems this conversation would be best managed by a human agent. Let me connect you to one of our agents."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Let's send you to an available agent."
+                },
+                "agent_unavailable": {
+                  "message": "There are no agents available at this time. When one becomes available, we'll connect you."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "step_005",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Profanity detected"
+                }
+              ]
+            }
+          }
+        ],
+        "title": "Fallback",
+        "action": "fallback",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "fallback_connect_to_agent"
+        },
+        "variables": [
+          {
+            "title": "Topic return failed",
+            "variable": "digression_failure",
+            "data_type": "any"
+          },
+          {
+            "title": "I'm afraid I don't understand. I can connect you to an agent.",
+            "variable": "step_001",
+            "data_type": "any"
+          },
+          {
+            "title": "Sorry I couldn't assist you. I will connect you to an agent righ",
+            "variable": "step_002",
+            "data_type": "any"
+          },
+          {
+            "title": "I am afraid I do not understand what you are asking, let me conn",
+            "variable": "step_003",
+            "data_type": "any"
+          },
+          {
+            "title": "It seems this conversation would be best managed",
+            "variable": "step_004",
+            "data_type": "any"
+          },
+          {
+            "title": "Profanity - It seems this conversation",
+            "variable": "step_005",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "run_always",
+        "disambiguation_opt_out": true
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "danger_word_detected",
+            "title": "Connect to agent",
+            "handlers": [],
+            "resolver": {
+              "type": "fallback"
+            },
+            "variable": "danger_word_detected_variable",
+            "condition": {
+              "entity": "danger_words"
+            },
+            "next_step": "profanity_detected"
+          },
+          {
+            "step": "profanity_detected",
+            "title": "Show warning",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Please use appropriate language when interacting with the assistant."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "max_hits",
+                "handler": "max_hits_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "max_hits": 2,
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "profanity_detected_variable",
+            "condition": {
+              "entity": "profane_words"
+            }
+          }
+        ],
+        "title": "Trigger word detected",
+        "action": "run_always",
+        "boosts": [],
+        "handlers": [],
+        "variables": [
+          {
+            "title": "Profanity detected",
+            "variable": "danger_word_detected_variable",
+            "data_type": "any"
+          },
+          {
+            "title": "Profane word detected",
+            "variable": "profanity_detected_variable",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "anything_else"
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_001",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "I'm afraid I don't understand. Please rephrase your question."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_001",
+            "condition": {
+              "lte": [
+                {
+                  "system_variable": "no_action_matches_count"
+                },
+                {
+                  "scalar": 3
+                }
+              ]
+            },
+            "next_step": "step_002"
+          },
+          {
+            "step": "step_002",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": ""
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action_and_end",
+              "invoke_action": {
+                "action": "fallback",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_002_result_1"
+              }
+            },
+            "variable": "step_002",
+            "condition": {
+              "gt": [
+                {
+                  "system_variable": "no_action_matches_count"
+                },
+                {
+                  "scalar": 3
+                }
+              ]
+            }
+          }
+        ],
+        "title": "No matches",
+        "action": "anything_else",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "expression": "anything_else"
+        },
+        "variables": [
+          {
+            "title": "I am afraid I do not understand what you are asking, please re-p",
+            "variable": "step_001",
+            "data_type": "any"
+          },
+          {
+            "variable": "step_002",
+            "data_type": "any"
+          },
+          {
+            "variable": "step_002_result_1",
+            "data_type": "any"
+          }
+        ],
+        "disambiguation_opt_out": true
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_935",
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_935"
+          }
+        ],
+        "title": "Greet customer",
+        "action": "welcome",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "expression": "welcome"
+        },
+        "variables": [
+          {
+            "title": "No response",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_935",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "action_20153",
+        "disambiguation_opt_out": true
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_472",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Welcome to the **National Cyber Crime Reporting Portal!**"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "The National CyberCrime Reporting portal is a part of the Ministry of Home Affairs, Government of India. It serves as a dedicated platform for reporting various cybercrimes, including fraud, hacking, and online scams.\n\n<br />\n\n\n\nThe portal aims to facilitate the reporting process by providing resources, guidance, and necessary tools to victims and users."
+                          },
+                          {
+                            "scalar": " Its primary goal is to combat digital threats effectively and enhance online safety for individuals and organizations across the country.\n\n<br />\n\n\n\nNow lets Get started With Report🧾🧾"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "options": [
+                    {
+                      "label": "Yes",
+                      "value": {
+                        "input": {
+                          "text": "Yes"
+                        }
+                      }
+                    },
+                    {
+                      "label": "No",
+                      "value": {
+                        "input": {
+                          "text": "No"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I'm sorry, I did not catch that, please restate your response."
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "sys-yes-no",
+              "max_tries": 3,
+              "response_collection_behavior": "always_ask"
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_472",
+            "next_step": "step_933"
+          },
+          {
+            "step": "step_933",
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_31085",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_933_result_1"
+              }
+            },
+            "variable": "step_933",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_472"
+                },
+                {
+                  "scalar": "yes"
+                }
+              ]
+            },
+            "next_step": "step_412"
+          },
+          {
+            "step": "step_412",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Thanks For Visiting GuardianBot Nira 😊😊"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_412",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_472"
+                },
+                {
+                  "scalar": "no"
+                }
+              ]
+            }
+          }
+        ],
+        "title": "Know about us",
+        "action": "action_24768",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_24768_intent_13459"
+        },
+        "variables": [
+          {
+            "title": "Thanks For Visiting GuardianBot Nira 😊😊",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_412",
+            "data_type": "any"
+          },
+          {
+            "title": "Welcome to the **National Cyber Crime Reporting Portal!**",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_472",
+            "data_type": "yes_no"
+          },
+          {
+            "title": "No response",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_933",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_933_result_1",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_9989",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_388",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Before you report, please provide your details:\n\n<br />\n\n\n\nWhat is your name?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "question": {
+              "free_text": true
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_388",
+            "next_step": "step_234"
+          },
+          {
+            "step": "step_234",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "How old are you?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I didn't catch that. Enter a number."
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "sys-number",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_234",
+            "next_step": "step_244"
+          },
+          {
+            "step": "step_244",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Email (e.g., user@example.com)"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I'm sorry, I did not catch that, please restate your response."
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "entity_14152",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_244",
+            "next_step": "step_678"
+          },
+          {
+            "step": "step_678",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Phone number (e.g., 800-555-1212 or (800) 555-1212)"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I'm sorry, I did not catch that, please restate your response."
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "entity_7278",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_678",
+            "next_step": "step_884"
+          },
+          {
+            "step": "step_884",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Please choose an option for your report:-"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                },
+                {
+                  "options": [
+                    {
+                      "label": "Online Finacial fraud",
+                      "value": {
+                        "input": {
+                          "text": "Online Finacial fraud"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Social Media Crime",
+                      "value": {
+                        "input": {
+                          "text": "Social Media Crime"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Computer System Hacking or Ransomware",
+                      "value": {
+                        "input": {
+                          "text": "Computer System Hacking or Ransomware"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Other fraud",
+                      "value": {
+                        "input": {
+                          "text": "Other fraud"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I didn't catch that. Select a valid option:"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "entity_11816",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_884",
+            "next_step": "step_573"
+          },
+          {
+            "step": "step_573",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Have lost money?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                },
+                {
+                  "options": [
+                    {
+                      "label": "Yes",
+                      "value": {
+                        "input": {
+                          "text": "Yes"
+                        }
+                      }
+                    },
+                    {
+                      "label": "No",
+                      "value": {
+                        "input": {
+                          "text": "No"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I'm sorry, I did not catch that, please restate your response."
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "sys-yes-no",
+              "max_tries": 3,
+              "response_collection_behavior": "always_ask"
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_573",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_884"
+                },
+                {
+                  "value": "Online Finacial fraud",
+                  "from_entity": "entity_11816"
+                }
+              ]
+            },
+            "next_step": "step_238"
+          },
+          {
+            "step": "step_238",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Contact us to report your complaint about cybercrime if you have lost money or data or experienced online abuse.\n\n<br />\n\n\n\nhere,\n\n<br />\n\n\n\nBIHAR:\n\n\n  - Email: [cybercell-bih@nic.in]()\n  - Phone: 0612-2238098\n\nDELHI:\n\n\n  - Email: [ncrp.delhi@delhipolice.gov.in]()\n  - Phone: 011-20892633\n\n**KARNATAKA:**\n\n\n  - Email: [spctrcid@ksp.gov.in]()\n  - Phone: 080-22942475\n\n**MAHARASHTRA:**\n\n\n  -"
+                          },
+                          {
+                            "scalar": " Email: [ig.cbr-mah@gov.in]()\n  - Phone: 022-22160080\n\n**MADHYA PRADESH:**\n\n\n  - Email: [mpcyberpolice@mppolice.gov.in]()\n  - Phone: 0755-2770248\n\n<br />\n\n\n\nThanks for Visiting 😊😊"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_238",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_884"
+                },
+                {
+                  "value": "Other fraud",
+                  "from_entity": "entity_11816"
+                }
+              ]
+            },
+            "next_step": "step_682"
+          },
+          {
+            "step": "step_682",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Here are some popular social media platforms:\n\n\n  1. Facebook\n  2. Twitter\n  3. Instagram\n  4. LinkedIn\n  5. Snapchat\n  6. TikTok\n  7. Pinterest\n  8. Reddit\n  9. WhatsApp\n  10. YouTube\n\nIf you have experienced scam or fraud on any of these social media platforms, please respond with 'Yes'. Otherwise, respond with 'No'"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "options": [
+                    {
+                      "label": "Yes",
+                      "value": {
+                        "input": {
+                          "text": "Yes"
+                        }
+                      }
+                    },
+                    {
+                      "label": "No",
+                      "value": {
+                        "input": {
+                          "text": "No"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I'm sorry, I did not catch that, please restate your response."
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "sys-yes-no",
+              "max_tries": 3,
+              "response_collection_behavior": "always_ask"
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_682",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_884"
+                },
+                {
+                  "value": "Social Media Crime",
+                  "from_entity": "entity_11816"
+                }
+              ]
+            },
+            "next_step": "step_179"
+          },
+          {
+            "step": "step_179",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Has your computer system been hacked resulting in a loss of money or data? Please respond with yes or no."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                },
+                {
+                  "options": [
+                    {
+                      "label": "Yes",
+                      "value": {
+                        "input": {
+                          "text": "Yes"
+                        }
+                      }
+                    },
+                    {
+                      "label": "No",
+                      "value": {
+                        "input": {
+                          "text": "No"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I'm sorry, I did not catch that, please restate your response."
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "sys-yes-no",
+              "max_tries": 3,
+              "response_collection_behavior": "always_ask"
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_179",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_884"
+                },
+                {
+                  "value": "Computer System Hacking or Ransomware",
+                  "from_entity": "entity_11816"
+                }
+              ]
+            },
+            "next_step": "step_127"
+          },
+          {
+            "step": "step_127",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Please provide the date.(mm/dd/yyyy)"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "response_type": "date",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I'm sorry, I did not catch that, please restate your response."
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "sys-date",
+              "max_tries": 3,
+              "allow_topic_switch": false,
+              "collect_verbatim_response": false,
+              "response_collection_behavior": "optionally_ask"
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_127",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_573"
+                },
+                {
+                  "scalar": "yes"
+                }
+              ]
+            },
+            "next_step": "step_462"
+          },
+          {
+            "step": "step_462",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "If applicable, provide the transaction ID of your money transfer."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I didn't catch that. Enter a number."
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "sys-number",
+              "max_tries": 3,
+              "allow_topic_switch": false,
+              "collect_verbatim_response": false,
+              "response_collection_behavior": "optionally_ask"
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_462",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_573"
+                },
+                {
+                  "scalar": "yes"
+                }
+              ]
+            },
+            "next_step": "step_334"
+          },
+          {
+            "step": "step_334",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "If you have details about the scammer or attacker please share them"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                },
+                {
+                  "options": [
+                    {
+                      "label": "Yes",
+                      "value": {
+                        "input": {
+                          "text": "Yes"
+                        }
+                      }
+                    },
+                    {
+                      "label": "No",
+                      "value": {
+                        "input": {
+                          "text": "No"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I'm sorry, I did not catch that, please restate your response."
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "sys-yes-no",
+              "max_tries": 3,
+              "response_collection_behavior": "always_ask"
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_334",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_573"
+                },
+                {
+                  "scalar": "yes"
+                }
+              ]
+            },
+            "next_step": "step_643"
+          },
+          {
+            "step": "step_643",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "kindly provide us with details of the attacker"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "question": {
+              "free_text": true
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_643",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_334"
+                },
+                {
+                  "scalar": "yes"
+                }
+              ]
+            },
+            "next_step": "step_942"
+          },
+          {
+            "step": "step_942",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": ""
+                          },
+                          {
+                            "skill_variable": "Deatils"
+                          },
+                          {
+                            "scalar": "\n\n<br />\n\n\n\nThanks for Details We will contact you within 24 hours regarding your complaint and further details."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "variable": "step_643"
+                  },
+                  "skill_variable": "Deatils"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_942",
+            "next_step": "step_403"
+          },
+          {
+            "step": "step_403",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "We will contact you within 24 hours regarding your complaint and further details."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_403",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_334"
+                },
+                {
+                  "scalar": "no"
+                }
+              ]
+            },
+            "next_step": "step_284"
+          },
+          {
+            "step": "step_284",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Details of your account\n\n<br />\n\n\n\nusername or email"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "question": {
+              "free_text": true
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_284",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_682"
+                },
+                {
+                  "scalar": "yes"
+                }
+              ]
+            },
+            "next_step": "step_903"
+          },
+          {
+            "step": "step_903",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Please provide details about the social media platform, the specific social media account involved, and the nature of the fraud or scam."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_903",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_682"
+                },
+                {
+                  "scalar": "no"
+                }
+              ]
+            },
+            "next_step": "step_677"
+          },
+          {
+            "step": "step_677",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Account password"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I didn't catch that. Enter a number."
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "sys-number",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_677",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_682"
+                },
+                {
+                  "scalar": "yes"
+                }
+              ]
+            },
+            "next_step": "step_850"
+          },
+          {
+            "step": "step_850",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Have you lost Money?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                },
+                {
+                  "options": [
+                    {
+                      "label": "Yes",
+                      "value": {
+                        "input": {
+                          "text": "Yes"
+                        }
+                      }
+                    },
+                    {
+                      "label": "No",
+                      "value": {
+                        "input": {
+                          "text": "No"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I'm sorry, I did not catch that, please restate your response."
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "sys-yes-no",
+              "max_tries": 3,
+              "response_collection_behavior": "always_ask"
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_850",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_682"
+                },
+                {
+                  "scalar": "yes"
+                }
+              ]
+            },
+            "next_step": "step_268"
+          },
+          {
+            "step": "step_268",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Please provide the date.(mm/dd/yyyy)"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                },
+                {
+                  "response_type": "date",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I'm sorry, I did not catch that, please restate your response."
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "sys-date",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_268",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_682"
+                },
+                {
+                  "scalar": "yes"
+                }
+              ]
+            },
+            "next_step": "step_764"
+          },
+          {
+            "step": "step_764",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "If you have details about the scammer or attacker please share them"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_764",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_682"
+                },
+                {
+                  "scalar": "yes"
+                }
+              ]
+            },
+            "next_step": "step_538"
+          },
+          {
+            "step": "step_538",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Please provide details about how it happened or describe the system you have."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "question": {
+              "free_text": true
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_538",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_179"
+                },
+                {
+                  "scalar": "yes"
+                }
+              ]
+            },
+            "next_step": "step_853"
+          },
+          {
+            "step": "step_853",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": ""
+                          },
+                          {
+                            "skill_variable": "system"
+                          },
+                          {
+                            "scalar": "\n\n<br />\n\n\n\nDetails are saved"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "variable": "step_538"
+                  },
+                  "skill_variable": "system"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_853",
+            "condition": {
+              "exists": {
+                "variable": "step_538"
+              }
+            },
+            "next_step": "step_312"
+          },
+          {
+            "step": "step_312",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "We are unable to proceed due to not meeting our eligibility requirements."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_312",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_179"
+                },
+                {
+                  "scalar": "no"
+                }
+              ]
+            },
+            "next_step": "step_269"
+          },
+          {
+            "step": "step_269",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "If you have details about the scammer or attacker please share them"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                },
+                {
+                  "options": [
+                    {
+                      "label": "Yes",
+                      "value": {
+                        "input": {
+                          "text": "Yes"
+                        }
+                      }
+                    },
+                    {
+                      "label": "No",
+                      "value": {
+                        "input": {
+                          "text": "No"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I'm sorry, I did not catch that, please restate your response."
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "sys-yes-no",
+              "max_tries": 3,
+              "response_collection_behavior": "always_ask"
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_269",
+            "next_step": "step_576"
+          },
+          {
+            "step": "step_576",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "kindly provide us with details of the attacker"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "question": {
+              "free_text": true
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_576",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_334"
+                },
+                {
+                  "scalar": "yes"
+                }
+              ]
+            },
+            "next_step": "step_997"
+          },
+          {
+            "step": "step_997",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": ""
+                          },
+                          {
+                            "skill_variable": "Deatils"
+                          },
+                          {
+                            "scalar": "\n\n<br />\n\n\n\nThanks for Details We will contact you within 24 hours regarding your complaint and further details. 📞"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "variable": "step_643"
+                  },
+                  "skill_variable": "Deatils"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_997",
+            "next_step": "step_990"
+          },
+          {
+            "step": "step_990",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "We will contact you within 24 hours regarding your complaint and further details. 📞"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_990",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_334"
+                },
+                {
+                  "scalar": "no"
+                }
+              ]
+            }
+          }
+        ],
+        "title": "Cyber Crime Reporting",
+        "action": "action_31085",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_31085_intent_6851"
+        },
+        "variables": [
+          {
+            "title": "Please provide the date.(mm/dd/yyyy)",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_127",
+            "data_type": "date"
+          },
+          {
+            "title": "Has your computer system been hacked resulting in a loss of mone",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_179",
+            "data_type": "yes_no"
+          },
+          {
+            "title": "How old are you?",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_234",
+            "data_type": "number"
+          },
+          {
+            "title": "Contact us to report your complaint about cybercrime if you have",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_238",
+            "data_type": "any"
+          },
+          {
+            "title": "Email (e.g., user@example.com)",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_244",
+            "data_type": "any"
+          },
+          {
+            "title": "Please provide the date.(mm/dd/yyyy)",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_268",
+            "data_type": "date"
+          },
+          {
+            "title": "If you have details about the scammer or attacker please share t",
+            "privacy": {
+              "enabled": true
+            },
+            "variable": "step_269",
+            "data_type": "yes_no"
+          },
+          {
+            "title": "Details of your account <br /> username or email",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_284",
+            "data_type": "any"
+          },
+          {
+            "title": "We are unable to proceed due to not meeting our eligibility requ",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_312",
+            "data_type": "any"
+          },
+          {
+            "title": "If you have details about the scammer or attacker please share t",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_334",
+            "data_type": "yes_no"
+          },
+          {
+            "title": "Before you report, please provide your details: <br /> What is y",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_388",
+            "data_type": "any"
+          },
+          {
+            "title": "We will contact you within 24 hours regarding your complaint and",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_403",
+            "data_type": "any"
+          },
+          {
+            "title": "If applicable, provide the transaction ID of your money transfer",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_462",
+            "data_type": "number"
+          },
+          {
+            "title": "Please provide details about how it happened or describe the sys",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_538",
+            "data_type": "any"
+          },
+          {
+            "title": "Have lost money?",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_573",
+            "data_type": "yes_no"
+          },
+          {
+            "title": "kindly provide us with details of the attacker",
+            "privacy": {
+              "enabled": true
+            },
+            "variable": "step_576",
+            "data_type": "any"
+          },
+          {
+            "title": "kindly provide us with details of the attacker",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_643",
+            "data_type": "any"
+          },
+          {
+            "title": "Account password",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_677",
+            "data_type": "number"
+          },
+          {
+            "title": "Phone number (e.g., 800-555-1212 or (800) 555-1212)",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_678",
+            "data_type": "any"
+          },
+          {
+            "title": "Here are some popular social media platforms: 1. Facebook 2. Twi",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_682",
+            "data_type": "yes_no"
+          },
+          {
+            "title": "If you have details about the scammer or attacker please share t",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_764",
+            "data_type": "any"
+          },
+          {
+            "title": "Have you lost Money?",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_850",
+            "data_type": "yes_no"
+          },
+          {
+            "title": "{variable} <br /> Details are saved",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_853",
+            "data_type": "any"
+          },
+          {
+            "title": "Please choose an option for your report:-",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_884",
+            "data_type": "any"
+          },
+          {
+            "title": "Please provide details about the social media platform, the spec",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_903",
+            "data_type": "any"
+          },
+          {
+            "title": "{variable} <br /> Thanks for Details We will contact you within ",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_942",
+            "data_type": "any"
+          },
+          {
+            "title": "We will contact you within 24 hours regarding your complaint and",
+            "privacy": {
+              "enabled": true
+            },
+            "variable": "step_990",
+            "data_type": "any"
+          },
+          {
+            "title": "{variable} <br /> Thanks for Details We will contact you within ",
+            "privacy": {
+              "enabled": true
+            },
+            "variable": "step_997",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_24768",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      }
+    ],
+    "intents": [
+      {
+        "intent": "action_9989_intent_5390",
+        "examples": [
+          {
+            "text": "Greetings"
+          },
+          {
+            "text": "hi"
+          },
+          {
+            "text": "hello"
+          },
+          {
+            "text": "Let's get started!"
+          },
+          {
+            "text": "Know about NIRA-AI"
+          },
+          {
+            "text": "Help with reporting"
+          },
+          {
+            "text": "Need assistance"
+          },
+          {
+            "text": "can you guide me?"
+          }
+        ]
+      },
+      {
+        "intent": "action_31085_intent_6851",
+        "examples": [
+          {
+            "text": "Report"
+          },
+          {
+            "text": "Cyber Crime Reporting"
+          },
+          {
+            "text": "Complaint"
+          },
+          {
+            "text": "online fraud complaint"
+          },
+          {
+            "text": "fraud complaint"
+          },
+          {
+            "text": "Register a complaint"
+          },
+          {
+            "text": "Cybercrime incident"
+          },
+          {
+            "text": "Reporting fraud"
+          },
+          {
+            "text": "I want to report a cybercrime"
+          },
+          {
+            "text": "fraud"
+          }
+        ]
+      },
+      {
+        "intent": "action_24768_intent_13459",
+        "examples": [
+          {
+            "text": "Learn more about us"
+          },
+          {
+            "text": "About our services"
+          },
+          {
+            "text": "Discover who we are"
+          },
+          {
+            "text": "Learn about our mission"
+          },
+          {
+            "text": "Know about us"
+          }
+        ]
+      },
+      {
+        "intent": "fallback_connect_to_agent",
+        "examples": [
+          {
+            "text": "Agent help"
+          },
+          {
+            "text": "I would like to speak to a human"
+          },
+          {
+            "text": "Can I connect to an agent?"
+          },
+          {
+            "text": "I would like to speak to someone"
+          },
+          {
+            "text": "Call agent"
+          }
+        ],
+        "description": "Please transfer me to an agent"
+      },
+      {
+        "intent": "action_20153_intent_12084",
+        "examples": [
+          {
+            "text": "Cybersecurity tips"
+          },
+          {
+            "text": "Educational resources"
+          },
+          {
+            "text": "Cyber Awareness"
+          },
+          {
+            "text": "Online Safety Tips"
+          },
+          {
+            "text": "Training"
+          },
+          {
+            "text": "Training Resources"
+          },
+          {
+            "text": "learn"
+          },
+          {
+            "text": "learning"
+          },
+          {
+            "text": "Learn about online safety"
+          }
+        ]
+      }
+    ],
+    "entities": [
+      {
+        "entity": "profane_words",
+        "values": [],
+        "fuzzy_match": false
+      },
+      {
+        "entity": "sys-date",
+        "values": []
+      },
+      {
+        "entity": "sys-number",
+        "values": []
+      },
+      {
+        "entity": "sys-yes-no",
+        "values": []
+      },
+      {
+        "entity": "entity_25934",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "Documents Reqirements",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Steps for fill the online complaint or report",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Video for fill the online complaint or report",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "entity_14152",
+        "values": [
+          {
+            "type": "patterns",
+            "value": "Email",
+            "patterns": [
+              "\\b(?:[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?\\.)+[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?|\\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[A-Za-z0-9-]*[A-Za-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])\\b"
+            ]
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "entity_11816",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "Other fraud",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Online Finacial fraud",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Social Media Crime",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Computer System Hacking or Ransomware",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "entity_48920",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "Cyber Security Resources BOOKS",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "TRAINING RESOURCES",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "NEWS Channels for Cyber Crimes",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Cyber Security Awareness VIDEOS ",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "danger_words",
+        "values": [],
+        "fuzzy_match": false
+      },
+      {
+        "entity": "entity_7278",
+        "values": [
+          {
+            "type": "patterns",
+            "value": "Phone number",
+            "patterns": [
+              "\\b(?:\\+?(\\d{1,3}))?[-. (]*(\\d{3})[-. )]*(\\d{3})[-. ]*(\\d{4})(?: *x(\\d+))?\\b"
+            ]
+          }
+        ],
+        "fuzzy_match": true
+      }
+    ],
+    "metadata": {
+      "skill": {
+        "counts": {
+          "actions": 8,
+          "intents": 5,
+          "entities": 10,
+          "data_types": 0,
+          "collections": 0,
+          "global_variables": 3
+        }
+      },
+      "api_version": {
+        "major_version": "v2",
+        "minor_version": "2018-11-08"
+      }
+    },
+    "variables": [
+      {
+        "title": "Deatils",
+        "privacy": {
+          "enabled": false
+        },
+        "variable": "Deatils",
+        "data_type": "string",
+        "description": ""
+      },
+      {
+        "title": "Name",
+        "privacy": {
+          "enabled": false
+        },
+        "variable": "Name",
+        "data_type": "string",
+        "description": ""
+      },
+      {
+        "title": "system",
+        "privacy": {
+          "enabled": false
+        },
+        "variable": "system",
+        "data_type": "string",
+        "description": ""
+      }
+    ],
+    "data_types": [],
+    "collections": [],
+    "counterexamples": [],
+    "system_settings": {
+      "variable": {
+        "format": {
+          "time": {
+            "pattern": "short"
+          },
+          "currency": {
+            "fraction_digits": 2
+          }
+        }
+      },
+      "off_topic": {
+        "enabled": true
+      },
+      "auto_learn": {
+        "apply": true
+      },
+      "topic_switch": {
+        "enabled": true,
+        "messages": {
+          "enable_confirmation": true,
+          "confirmation_failure": {
+            "generic": [
+              {
+                "values": [
+                  {
+                    "text_expression": {
+                      "concat": [
+                        {
+                          "scalar": "I'm sorry, I did not catch that, please confirm."
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "response_type": "text",
+                "selection_policy": "sequential"
+              }
+            ]
+          },
+          "confirmation_request": {
+            "generic": [
+              {
+                "values": [
+                  {
+                    "text_expression": {
+                      "concat": [
+                        {
+                          "scalar": "Do you want to continue with the previous topic: "
+                        },
+                        {
+                          "system_variable": "digressed_from"
+                        },
+                        {
+                          "scalar": "?"
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "response_type": "text",
+                "selection_policy": "sequential"
+              },
+              {
+                "options": [
+                  {
+                    "label": "Yes",
+                    "value": {
+                      "input": {
+                        "text": "Yes"
+                      }
+                    }
+                  },
+                  {
+                    "label": "No",
+                    "value": {
+                      "input": {
+                        "text": "No"
+                      }
+                    }
+                  }
+                ],
+                "response_type": "option",
+                "repeat_on_reprompt": true
+              }
+            ]
+          }
+        },
+        "max_tries": 3
+      },
+      "generative_ai": {
+        "slot_filling": {
+          "enabled": false
+        }
+      },
+      "disambiguation": {
+        "prompt": "Did you mean:",
+        "enabled": true,
+        "randomize": true,
+        "max_suggestions": 5,
+        "suggestion_text_policy": "title",
+        "none_of_the_above_prompt": "None of the above",
+        "use_connect_to_support_prompt": "Connect to support",
+        "single_answer_clarification_prompt": "Something else"
+      },
+      "search_routing": {
+        "target": "conversational_search"
+      },
+      "spelling_auto_correct": true
+    },
+    "learning_opt_out": false,
+    "language": "en"
+  },
+  "description": "created for assistant b5b17535-5b37-47a9-963a-39992f610708",
+  "dialog_settings": {
+    "source_assistant": "9608e39f-6fcf-4753-aeb0-0041d9a4b0da"
+  },
+  "created": "2024-06-30T20:46:12.946Z",
+  "updated": "2024-06-30T20:46:12.946Z",
+  "snapshot": "2",
+  "assistant_id": "b5b17535-5b37-47a9-963a-39992f610708",
+  "assistant_references": [
+    {
+      "name": "Customer Support Automation",
+      "assistant_id": "9608e39f-6fcf-4753-aeb0-0041d9a4b0da",
+      "skill_reference": "actions skill"
+    }
+  ]
+}
